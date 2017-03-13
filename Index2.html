@@ -32,6 +32,7 @@
 	var x = ""
 	var gifList = ["deadpool", "sherlock","wolverine","rocky","star wars","star trek","pulp fiction"]
 	var arrayPosition = []
+	var datastate = "still"
 	//var queryURL = ""
 	// Loop to make preset buttons
 	
@@ -111,8 +112,7 @@
     	var results = response.data;
     	for (var i = 0; i < results.length; i++) {
      		gifDiv = $("<p class='item'>");
-     		//var motion = document.createElement("motion");
-     		//motion.setAttribute("id", "still");
+     		
      		var rating = results[i].rating;
      		var p = $("<p>").text("Rating: "+rating);
      		var gifImage= $("<img>");
@@ -129,18 +129,8 @@
      	$("#gifs-here").append(gifDiv);	
 
 
-		
-     	
-		}
-	
-	
-});
-
-});
-}
-
-	function animate () {
-	 $(".gifs").on("click", function() {
+		function animate () {
+	 $(".gif").on("click", function() {
 	 console.log("fuck yeah");
       var state = $(this).attr("data-state");
       if (state === "still") {
@@ -153,11 +143,37 @@
     });
      		}
 
+
+animate ()
+	
+     	
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+});
+
+});
+}
+
+
     
     getButtons()
     newBtn()
     getGif()
-    animate()
+   
     
     
     
